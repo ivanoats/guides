@@ -20,9 +20,29 @@ Install the Aerobatic command line interface (CLI) tool:
 ```shell
 npm -g install aerobatic-cli
 ```
+Set up the project to use Aerobatic:
+```shell
+aero create
+```
 
-Use `aero deploy` to deploy your app.
+Build the ember project `ember build`:
 
+```shell
+ember build
+```
+
+Edit the `aerobatic.yml` file to enable pushState, so that every file requests the Ember app at index:
+```yaml
+plugins:
+  - name: webpage
+    options:
+      canonicalRedirects: true
+      pushState: true
+```
+Deploy your app:
+```shell
+aero deploy --directory dist
+```
 
 ## Deploying to surge.sh
 
@@ -44,11 +64,11 @@ mv dist/index.html dist/200.html
 surge dist funny-name.surge.sh
 ```
 
-We chose funny-name.surge.sh but you may use any unclaimed subdomain you like or 
+We chose funny-name.surge.sh but you may use any unclaimed subdomain you like or
 use a custom domain that you own and have pointed the DNS to one of surges servers.
 If the second argument is left blank surge will prompt you with a suggested subdomain.
 
-To deploy to the same URL after making changes, perform the same steps, reusing 
+To deploy to the same URL after making changes, perform the same steps, reusing
 the same domain as before.
 
 ```shell
