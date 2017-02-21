@@ -11,6 +11,19 @@ ember build
 scp -r dist/* myserver.com:/var/www/public/
 ```
 
+## Deplying to Aerobatic
+
+[Aerobatic](https://www.aerobatic.com) offers static site hosting including global CDN, HTTPS, and a [wide range of plugins](https://www.aerobatic.com/docs/plugins/). To deploy an Ember app you can publish the folder made by `ember build`.
+
+Install the Aerobatic command line interface (CLI) tool:
+
+```shell
+npm -g install aerobatic-cli
+```
+
+Use `aero deploy` to deploy your app.
+
+
 ## Deploying to surge.sh
 
 [Surge.sh](http://surge.sh/) allows you to publish any folder to the web for free.
