@@ -32,6 +32,7 @@ ember build
 ```
 
 Edit the `aerobatic.yml` file to enable pushState, so that every file requests the Ember app at index:
+
 ```yaml
 plugins:
   - name: webpage
@@ -39,7 +40,9 @@ plugins:
       canonicalRedirects: true
       pushState: true
 ```
+
 Deploy your app:
+
 ```shell
 aero deploy --directory dist
 ```
